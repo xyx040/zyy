@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北京三日游攻略</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind 配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#FF7D00',
+            dark: '#1E293B',
+            light: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      }
+      .backdrop-blur {
+        backdrop-filter: blur(8px);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- 旅行攻略卡片 -->
+    <div class="rounded-2xl overflow-hidden card-shadow bg-white mb-8">
+      <!-- 背景图区域 -->
+      <div class="relative h-64 md:h-80">
+        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/1d5f3e209fe14b0694f15d6c66d85470~tplv-a9rns2rl98-image.image?rk3s=8e244e95&amp;rrcfp=2609e108&amp;x-expires=1751823709&amp;x-signature=buF0v2FKYWVU6vef%2BHd4kuHW8sc%3D" alt="北京城市风光" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <h1 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white text-shadow mb-2">北京三日游路线</h1>
+          <p class="text-gray-200 text-shadow text-lg">探索首都精华景点，感受历史与现代交融</p>
+        </div>
+      </div>
+      
+      <!-- 折叠式菜单区域 -->
+      <div class="p-6">
+        <!-- 第一天 -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <div class="flex justify-between items-center cursor-pointer day-toggle" data-day="day1">
+            <h2 class="text-2xl font-bold text-primary flex items-center">
+              <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mr-3">1</span>
+              第一天：历史古迹之旅
+            </h2>
+            <i class="fa fa-chevron-down text-primary transition-transform duration-300 day-icon"></i>
+          </div>
+          
+          <div class="day-content mt-4 hidden" id="day1">
+            <div class="space-y-4">
+              <!-- 故宫 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">故宫博物院</h3>
+                    <p class="text-gray-600">中国明清两代的皇家宫殿，世界文化遗产</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 4-6小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">1号线/5号线 天安门东站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约20元，15分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 天安门广场 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">天安门广场</h3>
+                    <p class="text-gray-600">世界上最大的城市广场之一</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 1-2小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">1号线 天安门东站/西站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">起步价，5分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 前门大街 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">前门大街</h3>
+                    <p class="text-gray-600">保存最完整的明清古街，品尝北京小吃</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 2-3小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">2号线 前门站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约15元，10分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 第二天 -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+          <div class="flex justify-between items-center cursor-pointer day-toggle" data-day="day2">
+            <h2 class="text-2xl font-bold text-primary flex items-center">
+              <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mr-3">2</span>
+              第二天：皇家园林与现代建筑
+            </h2>
+            <i class="fa fa-chevron-down text-primary transition-transform duration-300 day-icon"></i>
+          </div>
+          
+          <div class="day-content mt-4 hidden" id="day2">
+            <div class="space-y-4">
+              <!-- 颐和园 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">颐和园</h3>
+                    <p class="text-gray-600">保存最完整的一座皇家行宫御苑</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 4-5小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">4号线 西苑站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约40元，30分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 鸟巢 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">国家体育场（鸟巢）</h3>
+                    <p class="text-gray-600">2008年北京奥运会的主体育场</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 1-2小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">8号线 奥体中心站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约35元，25分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 水立方 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">国家游泳中心（水立方）</h3>
+                    <p class="text-gray-600">2008年北京奥运会标志性建筑物之一</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 1-2小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">8号线 奥体中心站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约35元，25分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 第三天 -->
+        <div class="mb-6">
+          <div class="flex justify-between items-center cursor-pointer day-toggle" data-day="day3">
+            <h2 class="text-2xl font-bold text-primary flex items-center">
+              <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mr-3">3</span>
+              第三天：胡同与文化体验
+            </h2>
+            <i class="fa fa-chevron-down text-primary transition-transform duration-300 day-icon"></i>
+          </div>
+          
+          <div class="day-content mt-4 hidden" id="day3">
+            <div class="space-y-4">
+              <!-- 南锣鼓巷 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">南锣鼓巷</h3>
+                    <p class="text-gray-600">最古老的街区之一，北京胡同的代表</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 2-3小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">6号线/8号线 南锣鼓巷站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约25元，20分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 什刹海 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">什刹海</h3>
+                    <p class="text-gray-600">包括前海、后海和西海三个水域及临近地区</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 3-4小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">6号线 北海北站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">起步价，5分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 798艺术区 -->
+              <div class="location-card bg-gray-50 rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-xl font-semibold">798艺术区</h3>
+                    <p class="text-gray-600">北京的文化创意产业集聚区</p>
+                  </div>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fa fa-clock-o mr-1"></i> 3-4小时
+                  </span>
+                </div>
+                <div class="location-details mt-3 hidden">
+                  <div class="bg-white rounded-lg p-3 border border-gray-200">
+                    <h4 class="font-medium mb-2">交通方式</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-subway text-primary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">地铁</p>
+                          <p class="text-sm text-gray-600">14号线 望京南站</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center p-2 border rounded">
+                        <i class="fa fa-taxi text-secondary text-xl mr-2"></i>
+                        <div>
+                          <p class="font-medium">出租车</p>
+                          <p class="text-sm text-gray-600">约30元，25分钟</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 攻略总结 -->
+      <div class="bg-primary/5 p-6 border-t border-gray-100">
+        <h3 class="text-xl font-bold text-primary mb-3">旅行小贴士</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-start">
+            <i class="fa fa-info-circle text-primary mt-1 mr-2"></i>
+            <span>提前预约故宫、颐和园等热门景点门票，避免耽误行程</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-map-marker text-primary mt-1 mr-2"></i>
+            <span>建议购买北京交通一卡通，方便乘坐地铁和公交车</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-sun-o text-primary mt-1 mr-2"></i>
+            <span>根据季节准备衣物，春秋季早晚温差较大</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-cutlery text-primary mt-1 mr-2"></i>
+            <span>品尝北京特色美食：北京烤鸭、炸酱面、豆汁焦圈等</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="text-center text-gray-500 text-sm">
+      <p>© 2025 北京旅行攻略 | 设计与开发</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 折叠菜单交互
+    document.addEventListener('DOMContentLoaded', function() {
+      // 初始化：默认展开第一天
+      const firstDayContent = document.getElementById('day1');
+      firstDayContent.classList.remove('hidden');
+      const firstDayIcon = document.querySelector('[data-day="day1"] .day-icon');
+      firstDayIcon.classList.add('rotate-180');
+      
+      // 日期切换
+      const dayToggles = document.querySelectorAll('.day-toggle');
+      dayToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const day = this.getAttribute('data-day');
+          const content = document.getElementById(day);
+          const icon = this.querySelector('.day-icon');
+          
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+      
+      // 地点详情切换
+      const locationCards = document.querySelectorAll('.location-card');
+      locationCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // 如果点击的是卡片本身而不是内部的按钮等
+          if (!e.target.closest('button')) {
+            const details = this.querySelector('.location-details');
+            details.classList.toggle('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+
+    </body></html>
